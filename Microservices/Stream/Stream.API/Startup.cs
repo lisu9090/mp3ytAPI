@@ -26,7 +26,7 @@ namespace Stream.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton(typeof(ILogger), typeof(LoggingHelper));
+            services.AddSingleton(typeof(ILogger), typeof(ActionFilterLogger));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
