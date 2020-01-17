@@ -8,10 +8,10 @@ namespace APIComponents.Utils
 {
     public class ActionFilterLogger : ILogger
     {
-        private const string logsOrigin = @"..\logs\";
-        private readonly string filePath = "log-" + DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".txt";
-        private LogLevel LogLvl { get; set; }
-        private string Scope;
+        protected const string logsOrigin = @"..\logs\";
+        protected readonly string filePath = "log-" + DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".txt";
+        protected LogLevel LogLvl { get; set; }
+        protected string _scope;
 
         public ActionFilterLogger(LogLevel logLevel = LogLevel.Warning)
         {
@@ -75,17 +75,27 @@ namespace APIComponents.Utils
 
         }
 
-        private void AddScope(string scope)
+        protected void AddScope(string scope)
         {
-            
+            _scope += "/" + scope;
         }
 
-        private void RemoveScope(string scope)
+        protected void RemoveScope(string scope)
         {
+            var scopesArr = _scope.Split(new char[] { '/' });
 
+            StringBuilder sBuilder = new StringBuilder();
+
+            foreach(var item in scopesArr)
+            {
+                if (!item.Equals(scope))
+                    sBuilder.Append("/" + item);
+            }
+
+            _scope = sBuilder.ToString();
         }
 
-        public class ScopeManager : IDisposable
+        protected class ScopeManager : IDisposable
         {
             private string _state;
             private Action<string> _removeFromScope;
