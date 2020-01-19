@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIComponents", "Core\APICo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.API", "Microservices\Stream\Stream.API\Stream.API.csproj", "{FF45D297-2662-4E37-8C0A-2251330CC2B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream.Infrastructure", "Microservices\Stream\Stream.Infrastructure\Stream.Infrastructure.csproj", "{45523035-9D68-40A1-B015-28EB25925C2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Infrastructure", "Microservices\Stream\Stream.Infrastructure\Stream.Infrastructure.csproj", "{45523035-9D68-40A1-B015-28EB25925C2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioStreamer", "WebFront\AudioStreamer\AudioStreamer.csproj", "{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioStreamer", "WebFront\AudioStreamer\AudioStreamer.csproj", "{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

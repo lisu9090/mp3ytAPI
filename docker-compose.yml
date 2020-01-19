@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  audiostreamer:
+    image: ${DOCKER_REGISTRY-}audiostreamer
+    build:
+      context: .
+      dockerfile: WebFront/AudioStreamer/Dockerfile
+
+  stream.api:
+    image: ${DOCKER_REGISTRY-}streamapi
+    build:
+      context: .
+      dockerfile: Microservices/Stream/Stream.API/Dockerfile
+
