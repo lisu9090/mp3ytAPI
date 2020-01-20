@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioStreamer", "WebFront\A
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Domain", "Microservices\Stream\Stream.Domain\Stream.Domain.csproj", "{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
