@@ -30,6 +30,7 @@ namespace Stream.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddNodeServices();
             services.AddSingleton<ILogger, ActionFilterLogger>();
             services.AddTransient<IAudioStreamService, YtAudioStreamService>();
             services.AddTransient<IAudioStreamRepository, YtAudioStreamRepository>();

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Stream.Domain.Abstract.Services;
+using System.Threading.Tasks;
 
 namespace Stream.API.Controllers
 {
@@ -23,9 +24,11 @@ namespace Stream.API.Controllers
         }
 
         [HttpGet("audio/{vid}")]
-        public /*async*/ IActionResult GetAudioStream(string vid)
+        public async Task<IActionResult> GetAudioStream(string vid)
         {
-            return Ok();
+            var outputStream = await _audioStreamService.GetAudioStreamAsync(vid);
+
+            return Ok(outputStream);
         }
     }
 }

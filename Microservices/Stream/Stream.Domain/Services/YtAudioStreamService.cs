@@ -20,7 +20,7 @@ namespace Stream.Domain.Domain
 
         public Task<System.IO.Stream> GetAudioStreamAsync(string videoId)
         {
-            throw new NotImplementedException();
+            return new TaskFactory<System.IO.Stream>().StartNew(() => _audioStreamRepository.GetAudioStream(videoId));
         }
     }
 }

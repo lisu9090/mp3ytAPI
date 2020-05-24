@@ -4,7 +4,7 @@ namespace Stream.Domain.Abstract.Repositories
 {
     public interface IAudioStreamRepository
     {
-        object GetAudioStream(string url);
+        System.IO.Stream GetAudioStream(string url);
         AudioDescription GetAudioDescription(string url);
     }
 }

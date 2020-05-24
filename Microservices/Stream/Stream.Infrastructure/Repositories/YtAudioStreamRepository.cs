@@ -11,12 +11,12 @@ namespace Stream.Infrastructure.Services
     {
         protected INodeServices _nodeServices;
 
-        public YtAudioStreamRepository()
-        {
-            //var options = new NodeServicesOptions();
-            //options
-            //_nodeServices = new NodeServicesFactory().CreateNodeServices();
-        }
+        //public YtAudioStreamRepository()
+        //{
+        //    //var options = new NodeServicesOptions();
+        //    //options
+        //    //_nodeServices = new NodeServicesFactory().CreateNodeServices();
+        //}
 
         public YtAudioStreamRepository(INodeServices nodeServices)
         {
@@ -25,12 +25,12 @@ namespace Stream.Infrastructure.Services
 
         public AudioDescription GetAudioDescription(string url)
         {
-            throw new NotImplementedException();
+            return new AudioDescription { id = "" , length = 0, title = "" };
         }
 
-        public object GetAudioStream(string url)
+        public System.IO.Stream GetAudioStream(string url)
         {
-            throw new NotImplementedException();
+            return _nodeServices.InvokeAsync<System.IO.Stream>("../NodeScripts/VideoToAudioStream", url).Result;
         }
     }
 }
