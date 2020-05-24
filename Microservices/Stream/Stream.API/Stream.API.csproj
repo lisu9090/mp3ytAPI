@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\APIComponents\APIComponents.csproj" />
+    <ProjectReference Include="..\Stream.Domain\Stream.Domain.csproj" />
+    <ProjectReference Include="..\Stream.Infrastructure\Stream.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

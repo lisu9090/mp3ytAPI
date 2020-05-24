@@ -1,6 +1,7 @@
 ﻿using APIComponents.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Stream.Domain.Abstract.Services;
 
 namespace Stream.API.Controllers
 {
@@ -8,9 +9,11 @@ namespace Stream.API.Controllers
     [ApiController]
     public class StreamController : BaseController
     {
-        public StreamController(ILogger logger) : base(logger) 
-        {
+        private IAudioStreamService _audioStreamService;
 
+        public StreamController(IAudioStreamService audioStreamService, ILogger logger) : base(logger) 
+        {
+            _audioStreamService = audioStreamService;
         }
 
         [HttpGet("desc/{vid}")]
