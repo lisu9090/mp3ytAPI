@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Stream.Domain\Stream.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,11 +1,8 @@
 ﻿using Stream.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Stream.Domain.Interfaces
+namespace Stream.Domain.Abstract.Repositories
 {
-    interface IWebAudioStreamer
+    public interface IAudioStreamRepository
     {
         object GetAudioStream(string url);
         AudioDescription GetAudioDescription(string url);

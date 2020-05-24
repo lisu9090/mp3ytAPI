@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Infrastructure", "Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioStreamer", "WebFront\AudioStreamer\AudioStreamer.csproj", "{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Domain", "Microservices\Stream\Stream.Domain\Stream.Domain.csproj", "{9EA1352C-AC6E-468C-8679-F861D33790C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Domain", "Microservices\Stream\Stream.Domain\Stream.Domain.csproj", "{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream.Tests", "Tests\Stream.Tests\Stream.Tests.csproj", "{346F5E7C-E5E5-453F-9F07-AED281376301}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9F55CC7-A5CC-44F6-97E5-9B53064A3C88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA3A85B5-3C98-41FD-8B16-2CC59AE05CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346F5E7C-E5E5-453F-9F07-AED281376301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346F5E7C-E5E5-453F-9F07-AED281376301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346F5E7C-E5E5-453F-9F07-AED281376301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346F5E7C-E5E5-453F-9F07-AED281376301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

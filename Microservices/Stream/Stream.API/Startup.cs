@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Stream.Domain.Abstract.Repositories;
+using Stream.Domain.Abstract.Services;
+using Stream.Domain.Domain;
+using Stream.Infrastructure.Services;
 
 namespace Stream.API
 {
@@ -26,7 +30,9 @@ namespace Stream.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton(typeof(ILogger), typeof(ActionFilterLogger));
+            services.AddSingleton<ILogger, ActionFilterLogger>();
+            services.AddTransient<IAudioStreamService, YtAudioStreamService>();
+            services.AddTransient<IAudioStreamRepository, YtAudioStreamRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
