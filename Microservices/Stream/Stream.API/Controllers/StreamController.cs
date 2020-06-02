@@ -17,13 +17,13 @@ namespace Stream.API.Controllers
             _audioStreamService = audioStreamService;
         }
 
-        [HttpGet("desc/{vid}")]
+        [HttpGet("desc")]
         public /*async*/ IActionResult GetAudioDescription(string vid)
         {
             return Ok();
         }
 
-        [HttpGet("audio/{vid}")]
+        [HttpGet("audio")]
         public async Task<IActionResult> GetAudioStream(string vid)
         {
             var outputStream = await _audioStreamService.GetAudioStreamAsync(vid);
