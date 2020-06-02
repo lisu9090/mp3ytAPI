@@ -5,6 +5,10 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 COPY ["Microservices/Stream/Stream.API/Stream.API.csproj", "Microservices/Stream/Stream.API/"]
+COPY ["Core/APIComponents/APIComponents.csproj", "Core/APIComponents/"]
+COPY ["Microservices/Stream/Stream.Domain/Stream.Domain.csproj", "Microservices/Stream/Stream.Domain/"]
+COPY ["Core/Infrastructure/Infrastructure.csproj", "Core/Infrastructure/"]
+COPY ["Microservices/Stream/Stream.Infrastructure/Stream.Infrastructure.csproj", "Microservices/Stream/Stream.Infrastructure/"]
 RUN dotnet restore "Microservices/Stream/Stream.API/Stream.API.csproj"
 COPY . .
 WORKDIR "/src/Microservices/Stream/Stream.API"
