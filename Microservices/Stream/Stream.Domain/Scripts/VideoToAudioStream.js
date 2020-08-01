@@ -9,6 +9,5 @@ module.exports = function (result, vid) {
     }
     catch (exception) {
         console.log(exception);
-    }
-
+    };
 }

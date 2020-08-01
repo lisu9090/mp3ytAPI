@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APIComponents.Utils;
+using Jering.Javascript.NodeJS;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,11 +30,18 @@ namespace Stream.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddNodeServices();
             services.AddSingleton<ILogger, ActionFilterLogger>();
             services.AddTransient<IAudioStreamService, YtAudioStreamService>();
             services.AddTransient<IAudioStreamRepository, YtAudioStreamRepository>();
+
+            #region external
+
+            services.AddNodeJS();
+
+            #endregion
+
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

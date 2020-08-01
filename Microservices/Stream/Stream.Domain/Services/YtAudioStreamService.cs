@@ -1,26 +1,25 @@
-﻿using Stream.Domain.Abstract.Repositories;
+﻿using Jering.Javascript.NodeJS;
+using Stream.Domain.Abstract.Repositories;
 using Stream.Domain.Abstract.Services;
-using Stream.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Threading.Tasks;
+using YoutubeExplode;
+using YoutubeExplode.Videos.Streams;
 
 namespace Stream.Domain.Domain
 {
     public class YtAudioStreamService : IAudioStreamService
     {
-        private IAudioStreamRepository _audioStreamRepository;
-
-        public YtAudioStreamService(IAudioStreamRepository audioStreamRepository)
+        public async Task<System.IO.Stream> GetAudioStreamAsync(string videoId)
         {
-            _audioStreamRepository = audioStreamRepository;
-        }
+            //todo: clean this codes
 
-        public Task<System.IO.Stream> GetAudioStreamAsync(string videoId)
-        {
-            return new TaskFactory<System.IO.Stream>().StartNew(() => _audioStreamRepository.GetAudioStream(videoId));
+            var ytClient = new YoutubeClient();
+
+            var streamManifest = await ytClient.Videos.Streams.GetManifestAsync(videoId);
+            
+            var streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
+
+            return await ytClient.Videos.Streams.GetAsync(streamInfo);
         }
     }
 }

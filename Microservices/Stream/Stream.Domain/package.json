@@ -1,5 +1,5 @@
 {
-  "name": "stream.infrastructure",
+  "name": "stream.domain",
   "version": "1.0.0",
   "description": "",
   "main": "NodeScripts\\VideoToAudioStream.js",

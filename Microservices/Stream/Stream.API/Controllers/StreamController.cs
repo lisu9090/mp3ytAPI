@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Stream.Domain.Abstract.Services;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Stream.API.Controllers
@@ -12,22 +13,30 @@ namespace Stream.API.Controllers
     {
         private IAudioStreamService _audioStreamService;
 
-        public StreamController(IAudioStreamService audioStreamService, ILogger logger) : base(logger) 
+        public StreamController(IAudioStreamService audioStreamService, ILogger logger) : base(logger)
         {
             _audioStreamService = audioStreamService;
         }
 
-        [HttpGet("desc")]
+        [HttpGet]
+        [Route("desc")]
         public /*async*/ IActionResult GetAudioDescription(string vid)
         {
             return Ok();
         }
 
-        [HttpGet("audio")]
+        [HttpGet]
+        [Route("audio")]
         public async Task<IActionResult> GetAudioStream(string vid)
         {
             var outputStream = await _audioStreamService.GetAudioStreamAsync(vid);
 
+            //Response.StatusCode = 200;
+            //Response.ContentType = "text/plain";
+            //using (var sw = new StreamWriter(Response.Body))
+            //{
+            //    sw.Write(outputStream);
+            //}
             return Ok(outputStream);
         }
     }
