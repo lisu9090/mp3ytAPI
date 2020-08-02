@@ -1,19 +1,24 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim AS base
+# base image
+FROM node:12.2.0
+
+# install chrome for protractor tests
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+RUN apt-get update && apt-get install -yq google-chrome-stable
+
+# set working directory
 WORKDIR /app
-EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
-WORKDIR /src
-COPY ["WebFront/AudioStreamer/AudioStreamer.csproj", "WebFront/AudioStreamer/"]
-RUN dotnet restore "WebFront/AudioStreamer/AudioStreamer.csproj"
-COPY . .
-WORKDIR "/src/WebFront/AudioStreamer"
-RUN dotnet build "AudioStreamer.csproj" -c Release -o /app/build
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-FROM build AS publish
-RUN dotnet publish "AudioStreamer.csproj" -c Release -o /app/publish
+# install and cache app dependencies
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install -g @angular/cli@7.3.9
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AudioStreamer.dll"]
+# add app
+COPY . /app
+
+# start app
+CMD ng serve --host 0.0.0.0

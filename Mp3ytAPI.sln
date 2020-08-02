@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.API", "Microservices
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Infrastructure", "Microservices\Stream\Stream.Infrastructure\Stream.Infrastructure.csproj", "{45523035-9D68-40A1-B015-28EB25925C2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioStreamer", "WebFront\AudioStreamer\AudioStreamer.csproj", "{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Domain", "Microservices\Stream\Stream.Domain\Stream.Domain.csproj", "{9EA1352C-AC6E-468C-8679-F861D33790C8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream.Tests", "Tests\Stream.Tests\Stream.Tests.csproj", "{346F5E7C-E5E5-453F-9F07-AED281376301}"
@@ -41,10 +39,6 @@ Global
 		{45523035-9D68-40A1-B015-28EB25925C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45523035-9D68-40A1-B015-28EB25925C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45523035-9D68-40A1-B015-28EB25925C2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9263D8FC-2946-4BB8-B8BE-5E4314C470DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA1352C-AC6E-468C-8679-F861D33790C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
