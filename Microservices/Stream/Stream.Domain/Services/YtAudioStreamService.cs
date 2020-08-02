@@ -1,25 +1,26 @@
 ﻿using Jering.Javascript.NodeJS;
-using Stream.Domain.Abstract.Repositories;
+using Stream.Domain.Abstract.Adapters;
 using Stream.Domain.Abstract.Services;
 using System.Threading.Tasks;
-using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
 
 namespace Stream.Domain.Domain
 {
     public class YtAudioStreamService : IAudioStreamService
     {
+        private IYtExplodeAdapter _ytExplodeAdapter;
+
+        public YtAudioStreamService(IYtExplodeAdapter ytExplodeAdapter)
+        {
+            _ytExplodeAdapter = ytExplodeAdapter;
+        }
+
         public async Task<System.IO.Stream> GetAudioStreamAsync(string videoId)
         {
-            //todo: clean this codes
-
-            var ytClient = new YoutubeClient();
-
-            var streamManifest = await ytClient.Videos.Streams.GetManifestAsync(videoId);
+            var manifest = await _ytExplodeAdapter.GetStreamManifestAsync(videoId);
+            var info = manifest.GetAudioOnly().WithHighestBitrate();
             
-            var streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
-
-            return await ytClient.Videos.Streams.GetAsync(streamInfo);
+            return await _ytExplodeAdapter.GetAudioStreamAsync(info);
         }
     }
 }
