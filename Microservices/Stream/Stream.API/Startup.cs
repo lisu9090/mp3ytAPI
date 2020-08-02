@@ -36,6 +36,8 @@ namespace Stream.API
             services.RegisterRepositories();
             services.RegisterHelpers();
 
+            services.AddSwaggerGen();
+
             services.AddControllers();
         }
 
@@ -46,6 +48,13 @@ namespace Stream.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
