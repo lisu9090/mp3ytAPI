@@ -2,12 +2,12 @@ version: '3.4'
 
 services:
   audiostreamer:
-    image: ${DOCKER_REGISTRY-}audiostreamer
+    image: audiostreamer
     build:
-      context: .
-      dockerfile: WebFront/AudioStreamer/Dockerfile
+      context: ./WebFront/AudioStreamer
+      dockerfile: Dockerfile
     ports: 
-      - "8080:80"
+      - "8080:4200"
 
   stream.api:
     image: ${DOCKER_REGISTRY-}streamapi
